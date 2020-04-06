@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.janusgraph</groupId>
         <artifactId>janusgraph</artifactId>
-        <version>0.2.0</version>
+        <version>0.2.0-guava-27.0.1-jre</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>janusgraph-codepipelines-ci</artifactId>
@@ -13,7 +13,7 @@
     <properties>
         <top.level.basedir>${basedir}/..</top.level.basedir>
         <aws.sdk.version>2.0.0-preview-1</aws.sdk.version>
-        <lombok.version>1.16.16</lombok.version>
+        <lombok.version>1.18.12</lombok.version>
     </properties>
 
     <dependencies>
