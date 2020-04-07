@@ -209,7 +209,7 @@
                     </execution>
                 </executions>
             </plugin>
-
+            <!-- disabled transform is broken
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>xml-maven-plugin</artifactId>
@@ -280,7 +280,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
+            -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <executions>
