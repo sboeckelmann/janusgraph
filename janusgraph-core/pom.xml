@@ -7,6 +7,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>janusgraph-core</artifactId>
+    <!--
+    <packaging>bundle</packaging>
+    -->
     <name>JanusGraph-Core: Core Library for JanusGraph</name>
     <url>http://janusgraph.org</url>
 
@@ -147,6 +150,19 @@
             </testResource>
         </testResources>
         <plugins>
+                        <!--
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                  <instructions>
+                    <Export-Package>org.janusgraph.*</Export-Package>
+                    <Gremlin-Plugin-Dependencies>org.janusgraph:janusgraph-cassandra:${project.version};org.janusgraph:janusgraph-hadoop:${project.version}</Gremlin-Plugin-Dependencies>                  </instructions>
+                </configuration>
+              </plugin>             
+            -->
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
@@ -240,15 +256,12 @@
                                     <shadedPattern>org.janusgraph.shaded.objenesis_2_1</shadedPattern>
                                 </relocation>
                             </relocations>
-                            <!-- false below means the shade plugin overwrites the main project artifact (the one with no classifier).
-                                 false does *not* actually detach the main artifact, despite what the option name suggests. -->
                             <shadedArtifactAttached>false</shadedArtifactAttached>
                             <minimizeJar>false</minimizeJar>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
